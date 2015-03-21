@@ -4,18 +4,21 @@ import urllib.request
 import urllib.parse
 import re
 
-
 URL = 'http://nedroid.com/'
-request = urllib.request.urlopen('http://nedroid.com/')
+request = urllib.request.urlopen(URL)
+TEST = 'string test'
 
+
+#If there is a new comic, 
+#update the variable that is looked at to see if a new comic has been uploaded
 
 def redefineComicDate(check):
     if (check == True):
         arrayOfDates = re.findall('(?:January|February|March|April|May|June|July|August|September|October|November|December)\s\d\d(?:st|nd|rd|th)\,\s\d{4}', decoded)
-        #Month Day(th), Year
-        newComicDate = arrayOfDates[0]
+        #Regular expression to find a date in the format of Month Day(th), Year
+        newComicDate = arrayOfDates[0] #The first date found by the regular expression is set to the new comic date
         print("The new 'comic date' is: " +newComicDate)
-        return newComicDate
+        #return newComicDate
         
         
 
@@ -49,7 +52,9 @@ while (x is not 1):
 
 print("Shutting down......")
 
-    
+
+
+#variables outside of this will print in this function
 def main():
 	DO_NOT_END = 1
 	while (DO_NOT_END == 1):
