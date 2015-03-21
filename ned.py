@@ -20,10 +20,17 @@ checkForNewDate = False
 TEST = 'string test'
 firstNewComicCheckTrue = False
 
+
+#s = sched.scheduler(time.time, time.sleep)
+
+
+
+
+#s.enter(10, 1, timer, (s,))
+#s.run()
+
 ##If there is a new comic, 
 ##update the variable that is looked at to see if a new comic has been uploaded
-
-
 def redefineComicDate():
     #if (check == True):
     arrayOfDates = re.findall('(?:January|February|March|April|May|June|July|August|September|October|November|December)\s\d\d(?:st|nd|rd|th)\,\s\d{4}', decoded)
@@ -61,10 +68,19 @@ def continuousCheck(date):
 def main():
     foundNewComic = firstCheck()
     
-    if (foundNewComic == False):
-        foundNewComic = firstCheck()
-    elif (foundNewComic == True):
-        redefineComicDate()
+
+
+
+    ##put this in function!
+
+    #if (foundNewComic == False):
+    #    foundNewComic = firstCheck()
+    #elif (foundNewComic == True):
+    #    redefineComicDate()
+
+   #timer()
+    s.enter(10, 1, timer, (s,))
+    s.run()
 
 
     x = 0
@@ -73,5 +89,15 @@ def main():
         print("Shutting down....")
         x = 1
 
+def timer(sc): 
+    #print("Doing stuff...")
+    # do your stuff
+    if (foundNewComic == False):
+        foundNewComic = firstCheck()
+    elif (foundNewComic == True):
+        redefineComicDate()
+
+    sc.enter(4, 1, timer, (sc,))
+s = sched.scheduler(time.time, time.sleep)
 
 main()
