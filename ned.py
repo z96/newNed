@@ -73,14 +73,14 @@ def main():
 
     ##put this in function!
 
-    #if (foundNewComic == False):
-    #    foundNewComic = firstCheck()
-    #elif (foundNewComic == True):
-    #    redefineComicDate()
+    if (foundNewComic == False):
+        foundNewComic = firstCheck()
+    elif (foundNewComic == True):
+        redefineComicDate()
 
    #timer()
-    s.enter(10, 1, timer, (s,))
-    s.run()
+   #s.enter(10, 1, timer, (s,))
+   #s.run()
 
 
     x = 0
@@ -89,15 +89,15 @@ def main():
         print("Shutting down....")
         x = 1
 
-def timer(sc): 
-    #print("Doing stuff...")
-    # do your stuff
-    if (foundNewComic == False):
-        foundNewComic = firstCheck()
-    elif (foundNewComic == True):
-        redefineComicDate()
+#def timer(sc): 
+#    print("Doing stuff...")
+#    #do your stuff
+#    if (foundNewComic == False):
+#        foundNewComic = firstCheck()
+#    elif (foundNewComic == True):
+#        redefineComicDate()
 
-    sc.enter(4, 1, timer, (sc,))
-s = sched.scheduler(time.time, time.sleep)
+#    sc.enter(4, 1, timer, (sc,))
+#s = sched.scheduler(time.time, time.sleep)
 
 main()
