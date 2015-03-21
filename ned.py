@@ -3,6 +3,9 @@ import urllib
 import urllib.request
 import urllib.parse
 import re
+import sched
+import time
+
 
 URL = 'http://nedroid.com/'
 FirstComicDate = 'March 10th, 2015'
@@ -45,10 +48,6 @@ def firstCheck():
         return comicCheck
         
 
-
-
-#redefineComicDate(checkForNewDate)
-#this is where redefineComicDate happens
         
 
 
@@ -68,11 +67,11 @@ def main():
         redefineComicDate()
 
 
-    x = 0
-    while (x is not 1):
-        input('Hit enter to exit program')
-        print("Shutting down....")
-        x = 1
+    #x = 0
+    #while (x is not 1):
+    #    input('Hit enter to exit program')
+    #    print("Shutting down....")
+    #    x = 1
 
 
 main()
