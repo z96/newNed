@@ -83,11 +83,11 @@ def main():
     s.run()
 
 
-    x = 0
-    while (x is not 1):
-        input('Hit enter to exit program')
-        print("Shutting down....")
-        x = 1
+    #x = 0
+    #while (x is not 1):
+    #    input('Hit enter to exit program')
+    #    print("Shutting down....")
+    #    x = 1
 
 def timer(sc): 
     #print("Doing stuff...")
