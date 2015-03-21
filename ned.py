@@ -24,7 +24,7 @@ def redefineComicDate(check):
         arrayOfDates = re.findall('(?:January|February|March|April|May|June|July|August|September|October|November|December)\s\d\d(?:st|nd|rd|th)\,\s\d{4}', decoded)
                                                         #Regular expression to find a date in the format of Month Day(th), Year
         newComicDate = arrayOfDates[0]                  #The first date found by the regular expression is set to the new comic date
-        print("The new 'comic date' is: " +newComicDate)
+        print("This comic was posted on: " +newComicDate)
         #return newComicDate
 
 
@@ -38,35 +38,14 @@ def firstCheck():
 
 
 
-
-
-
-firstCheck()
-
-	
-	
-x = 0
-while (x is not 1):
-    input('Hit enter to exit program')
-    x = 1
-    
-
-print("Shutting down......")
-
-
-
-#variables outside of this will print in this function
 def main():
-	DO_NOT_END = 1
-	while (DO_NOT_END == 1):
-		print("breaking ned")
-		break
+
+    firstCheck()
+    x = 0
+    while (x is not 1):
+        input('Hit enter to exit program')
+        print("Shutting down....")
+        x = 1
+
 
 main()
-
-
-
-##response = urlopen(request)
-##response = urllib.urlopen(request)
-##url_handle = urllib.urlopen(request)
-##headers = urllib.url_handle.info()
