@@ -8,7 +8,7 @@ import time
 
 
 URL = 'http://nedroid.com/'
-FirstComicDate = 'March 10th, 2015'
+ComicDate = 'March 10th, 2015'
 
 request = urllib.request.urlopen(URL)
 puretext = request.read()			#puretext is of type 'byte'
@@ -26,18 +26,20 @@ decoded = puretext.decode("utf-8") 	#this changes it from 'byte' to 'str' format
 ##update the variable that is looked at to see if a new comic has been uploaded
 def redefineComicDate():
     #if (check == True):
+    
     arrayOfDates = re.findall('(?:January|February|March|April|May|June|July|August|September|October|November|December)\s\d\d(?:st|nd|rd|th)\,\s\d{4}', decoded)
     #Regular expression to find a date in the format of Month Day(th), Year
-    newComicDate = arrayOfDates[0]                  #The first date found by the regular expression is set to the new comic date
-
-    print("This comic was posted on: " +newComicDate)
+    
+   
+    ComicDate = arrayOfDates[0]                  #The first date found by the regular expression is set to the new comic date
+    print("The latest comic was posted on: " +ComicDate)
     #return newComicDate
 
 
 
 
 def firstCheck():
-    if FirstComicDate in decoded:
+    if ComicDate in decoded:
         print("There is no new comic")
         comicCheck = False
         return comicCheck
@@ -58,33 +60,36 @@ def continuousCheck(newComicGate):
     #every so often, check for new comic
 
     if (checker == False):
-        foundNewComic = firstCheck()
+        foundNewComic = check()
     elif(checker == True):
         redefineComicDate()
     else:
-        print("There is an error in the code. SHUTTING DOWN.")
+        print("An unknown error has occured. SHUTTING DOWN.")
+        input("Hit enter to exit.")
         sys.exit()
-
-    #time.sleep(5) #for testing purposes
-    #continuousCheck(checker)
     
+
+def check():
+    if ComicDate in decoded:
+        comicCheck = False
+        return comicCheck
+    else:
+        print("There is a new Nedroid comic!")
+        comicCheck = True
+        return comicCheck
+
+
+
+
 
 
 def main():
     foundNewComic = firstCheck()
-
-    ##put this in function!
-    #if (foundNewComic == False):
-    #    foundNewComic = firstCheck()
-    #elif (foundNewComic == True):
-    #    redefineComicDate()
-
-    #time.sleep(5)
+    everyHour = 60**2
 
     runContinuousCheck = True
     while (runContinuousCheck == True):
         continuousCheck(foundNewComic)
-
 
 
    #timer()
