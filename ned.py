@@ -40,12 +40,12 @@ def firstCheck():
     if ComicDate in decoded:
         print("There is no new comic")
         comicCheck = False
-        return comicCheck #FALSE
+        return comicCheck #FALSE            #maybe change to foundNewComic???
 
         
     else:
         print("There is a new Nedroid comic!")
-        comicCheck = True                 #move away from "FirstComicDate"
+        comicCheck = True                 #move away from "FirstComicDate"  #maybe change to foundNewComic???
         return comicCheck #TRUE
         
 
