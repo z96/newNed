@@ -50,12 +50,4 @@ def main():
     time.sleep(10)
 
 
-
-
 main()
-
-
-
-
-
-
