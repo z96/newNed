@@ -28,8 +28,11 @@ def redefineComicDate():
     arrayOfDates = re.findall('(?:January|February|March|April|May|June|July|August|September|October|November|December)\s\d\d(?:st|nd|rd|th)\,\s\d{4}', decoded)
     #Regular expression to find a date in the format of Month Day(th), Year
     
-   
+    
+    print(arrayOfDates)
     ComicDate = arrayOfDates[0]                  #The first date found by the regular expression is set to the new comic date
+   # print(ComicDate + "asdasds")
+    #print
     print("The latest comic was posted on: " +ComicDate)
     #return newComicDate
 
